@@ -1,0 +1,196 @@
+body {
+  background-color: rgb(29, 35, 31) !important;
+  color: white !important;
+  overflow-x: hidden;
+}
+
+header {
+  background-image: url(img/backgound\ desfocado.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+header h1 {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+@keyframes left {
+  from {
+    margin-right: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0px;
+    opacity: 1;
+  }
+}
+@keyframes right {
+  from {
+    margin-left: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+header img {
+  height: 500px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  animation: left 1s ease-in-out;
+}
+header div {
+  animation: right 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: solid;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 50px;
+}
+header div h1 {
+  text-align: center;
+}
+header div h4 {
+  text-align: center;
+  margin: 50px;
+}
+header div a {
+  text-decoration: none;
+  color: black;
+  background-color: chartreuse;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+header div a:hover {
+  padding: 10px 30px;
+}
+
+@media (max-width: 800px) {
+  header {
+    height: auto;
+  }
+}
+main section {
+  height: 100vh;
+}
+main section:nth-of-type(1) {
+  display: flex;
+}
+main section:nth-of-type(1) span {
+  text-decoration: underline;
+  color: chartreuse;
+}
+@keyframes up {
+  from {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 30px;
+    opacity: 1;
+  }
+}
+@keyframes up2 {
+  from {
+    margin-top: 250px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 150px;
+    opacity: 1;
+  }
+}
+main section:nth-of-type(1) h3 {
+  margin: 30px 0;
+  text-align: center;
+  animation: up 1s ease-in-out;
+}
+main section:nth-of-type(1) h1 {
+  margin: 150px 0;
+  text-align: center;
+  animation: up2 2s ease-in-out;
+}
+main section:nth-of-type(2) h1 {
+  text-align: center;
+}
+main section:nth-of-type(2) div {
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section:nth-of-type(2) div img {
+  border-radius: 20px;
+  width: 300px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s;
+}
+main section:nth-of-type(2) div p {
+  text-align: center;
+  font-size: 20px;
+}
+main section:nth-of-type(2) div:hover {
+  scale: 1.05;
+}
+main section:nth-of-type(2) div:hover img {
+  border-radius: 0px;
+}
+@media (max-width: 660px) {
+  main section:nth-of-type(2) {
+    height: auto;
+  }
+}
+main section:nth-of-type(3) h1 {
+  text-align: center;
+}
+main section:nth-of-type(3) div {
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section:nth-of-type(3) div img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s;
+}
+main section:nth-of-type(3) div p {
+  text-align: center;
+  font-size: 20px;
+}
+main section:nth-of-type(3) img:hover {
+  scale: 1.05;
+  border-radius: 30%;
+}
+
+footer {
+  height: 20vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  font-size: 20px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
