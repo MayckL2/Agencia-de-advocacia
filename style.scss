@@ -3,18 +3,101 @@ body{
     color: white !important;
     overflow-x: hidden;
 }
+@keyframes down {
+    from{margin-top: -100px;opacity: 0;}
+    to{margin-top: 0px;opacity: 1;}
+}
+.mod{
+    position: fixed;
+    top: 100px;
+    // width: 300px !important;
+    height: 200px;
+    padding: 20px;
+    background-color: green;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: outset 5px;
+    z-index: 9;
+    animation: down 2s;
 
+    h3{
+        text-align: center;
+        font-weight: bold;
+    }
+
+    button{
+        border-radius: 20px;
+        padding: 5px;
+        width: 100px;
+        cursor: pointer;
+        transition: all 0.5s;
+        border: outset;
+        font-weight: bold;
+    }
+    button:hover{
+        background-color: gray;
+    }
+}
+
+.advogado{
+    border: outset 5px;
+    border-radius: 20px;
+    position: fixed;
+    top: 5vh;
+    left: 20px;
+    background-color: rgb(0, 26, 0);
+    height: 500px;
+    overflow-y: scroll;
+    padding: 0px !important;
+    display: flex;
+    flex-direction: row;
+    z-index: 99;
+    
+    img{
+        width: 40%;
+        height: inherit;
+        object-fit: cover;
+    }
+    div{
+        padding: 20px;
+
+        h1{
+            text-decoration: underline;
+            text-align: center;
+        }
+        h4{
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .advogado{
+        flex-direction: column;
+
+        img{
+            width: 100%;
+            height: 300px;
+        }
+    }
+}
 header{
     background-image: url(img/backgound\ desfocado.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
+    padding-top: 120px;
+    overflow: hidden;
 
-    h1{
-        position: relative;
-        top: 30px;
-        left: 30px;        
+    .logo{
+        position: absolute;
+        top: -170px;
+        left: 0px;
+        width: 300px;
+        object-fit: contain;       
     }
 
     @keyframes left {
@@ -29,11 +112,11 @@ header{
     img{
         height: 500px;
         object-fit: contain;
-        animation: left 1s ease-in-out;
+        // animation: left 1s ease-in-out;
     }
 
     div{
-        animation: right 1s ease-in-out;
+        // animation: right 1s ease-in-out;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -43,6 +126,7 @@ header{
 
         h1{
             text-align: center;
+            color: chartreuse;
         }
         h4{
             text-align: center;
@@ -69,38 +153,46 @@ header{
 
     }
 }
-
+@keyframes up {
+    from{margin-top: 100px; opacity: 0;}
+    to{margin-top: 30px; opacity: 1;}
+}
+@keyframes up2 {
+    from{margin-top: 250px; opacity: 0;}
+   to{margin-top: 150px; opacity: 1;}
+}
+@keyframes popup {
+    0%{scale: 0.9;}
+    50%{scale: 1.1;}
+    100%{scale: 1;}
+}
 main{
     section{
         height: 100vh;
     }
-
+    
     section:nth-of-type(1){
         display: flex;
+        background-image: url(img/doenças-seculo-21.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
 
         span{
             text-decoration: underline;
             color: chartreuse;
         }
 
-        @keyframes up {
-            from{margin-top: 100px; opacity: 0;}
-            to{margin-top: 30px; opacity: 1;}
-        }
-        @keyframes up2 {
-            from{margin-top: 250px; opacity: 0;}
-            to{margin-top: 150px; opacity: 1;}
-        }
 
         h3{
             margin: 30px 0;
             text-align: center;
-            animation: up 1s ease-in-out;
+            // animation: up 1s ease-in-out;
         }
         h1{
             margin: 150px 0;
             text-align: center;
-            animation: up2 2s ease-in-out;
+            // animation: up2 2s ease-in-out;
         }
     }
 
@@ -110,31 +202,40 @@ main{
         }
 
         div{
-            height: fit-content;
-            transition: all 0.5s;
-            cursor: pointer;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
+            margin: 30px 0;
 
-            img{
-                border-radius: 20px;
-                width: 300px;
-                height: 200px;
-                object-fit: cover;
+            .casos{
+                // animation: popup 0.5s;
+                margin: 20px;
+                height: fit-content;
                 transition: all 0.5s;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                img{
+                    border-radius: 20px;
+                    width: 300px;
+                    height: 200px;
+                    object-fit: cover;
+                    transition: all 0.5s;
+                }
+                p{
+                    text-align: center;
+                    font-size: 20px;
+                }
             }
-            p{
-                text-align: center;
-                font-size: 20px;
-            }
+            .casos:hover{
+                scale: 1.05;
+                img{
+                    border-radius: 0px;
+                }
         }
-        div:hover{
-            scale: 1.05;
-            img{
-                border-radius: 0px;
-            }
         }
     }
     @media (max-width: 660px) {
@@ -144,35 +245,51 @@ main{
     }
 
     section:nth-of-type(3){
+        border-top: groove 5px;
+        display: flex;
+        align-items: flex-start;
+        
         h1{
+            margin-top: 100px;
             text-align: center;
         }
-
+        
         div{
-            height: fit-content;
-            transition: all 0.5s;
-            cursor: pointer;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            img{
-                border-radius: 50%;
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
+            flex-wrap: wrap;
+            
+            div{
+                margin-top: 30px;
+                height: fit-content;
                 transition: all 0.5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+                img{
+                    cursor: pointer;
+                    border-radius: 50%;
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    transition: all 0.5s;
+                }
+                p{
+                    text-align: center;
+                    font-size: 20px;
+                }
             }
-            p{
-                text-align: center;
-                font-size: 20px;
+            img:hover{
+                scale: 1.05;
+                border-radius: 30%;
             }
         }
-        img:hover{
-            scale: 1.05;
-            border-radius: 30%;
-        }
+    }
+}
+@media (max-width: 700px) {
+    section:nth-of-type(3){
+        height: auto;
     }
 }
 

@@ -1,20 +1,108 @@
+@charset "UTF-8";
 body {
   background-color: rgb(29, 35, 31) !important;
   color: white !important;
   overflow-x: hidden;
 }
 
+@keyframes down {
+  from {
+    margin-top: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+.mod {
+  position: fixed;
+  top: 100px;
+  height: 200px;
+  padding: 20px;
+  background-color: green;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: outset 5px;
+  z-index: 9;
+  animation: down 2s;
+}
+.mod h3 {
+  text-align: center;
+  font-weight: bold;
+}
+.mod button {
+  border-radius: 20px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: outset;
+  font-weight: bold;
+}
+.mod button:hover {
+  background-color: gray;
+}
+
+.advogado {
+  border: outset 5px;
+  border-radius: 20px;
+  position: fixed;
+  top: 5vh;
+  left: 20px;
+  background-color: rgb(0, 26, 0);
+  height: 500px;
+  overflow-y: scroll;
+  padding: 0px !important;
+  display: flex;
+  flex-direction: row;
+  z-index: 99;
+}
+.advogado img {
+  width: 40%;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.advogado div {
+  padding: 20px;
+}
+.advogado div h1 {
+  text-decoration: underline;
+  text-align: center;
+}
+.advogado div h4 {
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .advogado {
+    flex-direction: column;
+  }
+  .advogado img {
+    width: 100%;
+    height: 300px;
+  }
+}
 header {
   background-image: url(img/backgound\ desfocado.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
+  padding-top: 120px;
+  overflow: hidden;
 }
-header h1 {
-  position: relative;
-  top: 30px;
-  left: 30px;
+header .logo {
+  position: absolute;
+  top: -170px;
+  left: 0px;
+  width: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @keyframes left {
   from {
@@ -40,10 +128,8 @@ header img {
   height: 500px;
   -o-object-fit: contain;
      object-fit: contain;
-  animation: left 1s ease-in-out;
 }
 header div {
-  animation: right 1s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,6 +140,7 @@ header div {
 }
 header div h1 {
   text-align: center;
+  color: chartreuse;
 }
 header div h4 {
   text-align: center;
@@ -77,16 +164,6 @@ header div a:hover {
     height: auto;
   }
 }
-main section {
-  height: 100vh;
-}
-main section:nth-of-type(1) {
-  display: flex;
-}
-main section:nth-of-type(1) span {
-  text-decoration: underline;
-  color: chartreuse;
-}
 @keyframes up {
   from {
     margin-top: 100px;
@@ -107,20 +184,50 @@ main section:nth-of-type(1) span {
     opacity: 1;
   }
 }
+@keyframes popup {
+  0% {
+    scale: 0.9;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+main section {
+  height: 100vh;
+}
+main section:nth-of-type(1) {
+  display: flex;
+  background-image: url(img/doenças-seculo-21.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+main section:nth-of-type(1) span {
+  text-decoration: underline;
+  color: chartreuse;
+}
 main section:nth-of-type(1) h3 {
   margin: 30px 0;
   text-align: center;
-  animation: up 1s ease-in-out;
 }
 main section:nth-of-type(1) h1 {
   margin: 150px 0;
   text-align: center;
-  animation: up2 2s ease-in-out;
 }
 main section:nth-of-type(2) h1 {
   text-align: center;
 }
 main section:nth-of-type(2) div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+}
+main section:nth-of-type(2) div .casos {
+  margin: 20px;
   height: -moz-fit-content;
   height: fit-content;
   transition: all 0.5s;
@@ -130,7 +237,7 @@ main section:nth-of-type(2) div {
   justify-content: center;
   align-items: center;
 }
-main section:nth-of-type(2) div img {
+main section:nth-of-type(2) div .casos img {
   border-radius: 20px;
   width: 300px;
   height: 200px;
@@ -138,14 +245,14 @@ main section:nth-of-type(2) div img {
      object-fit: cover;
   transition: all 0.5s;
 }
-main section:nth-of-type(2) div p {
+main section:nth-of-type(2) div .casos p {
   text-align: center;
   font-size: 20px;
 }
-main section:nth-of-type(2) div:hover {
+main section:nth-of-type(2) div .casos:hover {
   scale: 1.05;
 }
-main section:nth-of-type(2) div:hover img {
+main section:nth-of-type(2) div .casos:hover img {
   border-radius: 0px;
 }
 @media (max-width: 660px) {
@@ -153,20 +260,31 @@ main section:nth-of-type(2) div:hover img {
     height: auto;
   }
 }
+main section:nth-of-type(3) {
+  border-top: groove 5px;
+  display: flex;
+  align-items: flex-start;
+}
 main section:nth-of-type(3) h1 {
+  margin-top: 100px;
   text-align: center;
 }
 main section:nth-of-type(3) div {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section:nth-of-type(3) div div {
+  margin-top: 30px;
   height: -moz-fit-content;
   height: fit-content;
   transition: all 0.5s;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main section:nth-of-type(3) div img {
+main section:nth-of-type(3) div div img {
+  cursor: pointer;
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -174,15 +292,20 @@ main section:nth-of-type(3) div img {
      object-fit: cover;
   transition: all 0.5s;
 }
-main section:nth-of-type(3) div p {
+main section:nth-of-type(3) div div p {
   text-align: center;
   font-size: 20px;
 }
-main section:nth-of-type(3) img:hover {
+main section:nth-of-type(3) div img:hover {
   scale: 1.05;
   border-radius: 30%;
 }
 
+@media (max-width: 700px) {
+  section:nth-of-type(3) {
+    height: auto;
+  }
+}
 footer {
   height: 20vh;
   background-color: black;
