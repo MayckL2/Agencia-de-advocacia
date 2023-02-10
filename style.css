@@ -52,12 +52,12 @@ body {
   border-radius: 20px;
   position: fixed;
   top: 5vh;
-  left: 20px;
+  left: 10vw;
   background-color: rgb(0, 26, 0);
   height: 500px;
   overflow-y: scroll;
   padding: 0px !important;
-  display: flex;
+  display: none;
   flex-direction: row;
   z-index: 99;
 }
@@ -76,6 +76,47 @@ body {
 }
 .advogado div h4 {
   text-align: center;
+}
+.advogado div .contatos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 70px auto;
+}
+.advogado div .contatos img {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: chartreuse;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin: 5px;
+}
+.advogado div .contatos img:hover {
+  scale: 1.1;
+  transform: rotateZ(15deg);
+}
+
+@media (max-width: 700px) {
+  .advogado {
+    left: 0px;
+  }
+}
+.fechaAdvogado {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.fechaAdvogado:hover {
+  scale: 1.1;
 }
 
 @media (max-width: 800px) {
@@ -166,21 +207,31 @@ header div a:hover {
 }
 @keyframes up {
   from {
-    margin-top: 100px;
+    margin-top: 170px;
     opacity: 0;
   }
   to {
-    margin-top: 30px;
+    margin-top: 100px;
     opacity: 1;
   }
 }
 @keyframes up2 {
   from {
-    margin-top: 250px;
+    margin-top: 300px;
     opacity: 0;
   }
   to {
-    margin-top: 150px;
+    margin-top: 250px;
+    opacity: 1;
+  }
+}
+@keyframes upAdvogado {
+  from {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 30px;
     opacity: 1;
   }
 }
@@ -210,14 +261,15 @@ main section:nth-of-type(1) span {
   color: chartreuse;
 }
 main section:nth-of-type(1) h3 {
-  margin: 30px 0;
+  margin: 100px 0;
   text-align: center;
 }
 main section:nth-of-type(1) h1 {
-  margin: 150px 0;
+  margin: 250px 0;
   text-align: center;
 }
 main section:nth-of-type(2) h1 {
+  margin: 100px 0 0 0;
   text-align: center;
 }
 main section:nth-of-type(2) div {
@@ -263,10 +315,9 @@ main section:nth-of-type(2) div .casos:hover img {
 main section:nth-of-type(3) {
   border-top: groove 5px;
   display: flex;
-  align-items: flex-start;
 }
 main section:nth-of-type(3) h1 {
-  margin-top: 100px;
+  margin-top: 200px;
   text-align: center;
 }
 main section:nth-of-type(3) div {
@@ -294,7 +345,10 @@ main section:nth-of-type(3) div div img {
 }
 main section:nth-of-type(3) div div p {
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+}
+main section:nth-of-type(3) div div .profissao {
+  font-size: 15px;
 }
 main section:nth-of-type(3) div img:hover {
   scale: 1.05;

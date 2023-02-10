@@ -16,10 +16,18 @@
     </div>
 
     <div class="container advogado">
+        <h1 onclick="fechaAdvogado()" class="fechaAdvogado">X</h1>
         <img id="perfil" src="img/matt murdock perfil.jpg" alt="">
         <div>
             <h1 id="nome"></h1>
             <h4 id="sinopse"></h4>
+
+            <div class="contatos">
+              <img src="img/email.png" alt="">
+              <img src="img/linkedin.png" alt="">
+              <img src="img/telephone.png" alt="">
+              <img src="img/whatsapp.png" alt="">
+            </div>
         </div>
     </div>
     <header class="container-fluid row">
@@ -44,19 +52,19 @@
         <section class="row">
             <h1>Lidamos com diversos casos judiciais, como:</h1>
             <div>
-                <div class="casos">
+                <div class="casos" onclick="modalAdvogado('img/foggy-perfil.png', 'Foggy Nelson', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 5 anos.Especializado na área tributaria e direitos humanos. ')">
                     <img src="img/direitos.webp" alt="">
                     <p>Direitos Humanos</p>
                 </div>
-                <div class="casos">
+                <div class="casos" onclick="modalAdvogado('img/foggy-perfil.png', 'Foggy Nelson', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 5 anos.Especializado na área tributaria e direitos humanos. ')">
                     <img src="img/tributo.jpg" alt="">
                     <p>Problemas Tributarios</p>
                 </div>
-                <div class="casos">
+                <div class="casos" onclick="modalAdvogado('img/karen perfil.jpg', 'Karen Page' ,'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 4 anos. Especializado na área de imigração e passaporte.')">
                     <img src="img/passaporte.webp" alt="">
                     <p>Imigração e Passaporte</p>
                 </div>
-                <div class="casos">
+                <div class="casos" onclick="modalAdvogado('img/matt murdock perfil.jpg', 'Matt Murdock', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 4 anos. Especializado na área criminológica e investigação.')">
                     <img src="img/preso.webp" alt="">
                     <p>Problemas Judiciais</p>
                 </div>
@@ -64,21 +72,24 @@
         </section>
 
         <section class="row" id="cont">
-            <h1>Contamos com diversos profissionais qualificados:</h1>
+            <h1>Para contatar um de nos clique na foto do advogado e escolha a forma de contato:</h1>
 
             <div>
 
-                <div onclick="modalAdvogado('img/foggy-perfil.png', 'Foggy Nelson', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 5 anos. Especializado na área criminológica e investigação.')" class="col advo">
+                <div onclick="modalAdvogado('img/foggy-perfil.png', 'Foggy Nelson', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 5 anos.Especializado na área tributaria e direitos humanos. ')" class="col advo">
                     <img src="img/Foggy.webp" alt="">
                     <p>Foggy Nelson</p>
+                    <p class="profissao">Advogado</p>
                 </div>
-                <div onclick="modalAdvogado('img/matt murdock perfil.jpg', 'Matt Murdock', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 4 anos. Especializado na área tributaria e direitos humanos.')" class="col advo">
+                <div onclick="modalAdvogado('img/matt murdock perfil.jpg', 'Matt Murdock', 'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 4 anos. Especializado na área criminológica e investigação.')" class="col advo">
                     <img src="img/matt murdock.jpg" alt="">
                     <p>Matt Murdock</p>
+                    <p class="profissao">Advogado</p>
                 </div>
                 <div onclick="modalAdvogado('img/karen perfil.jpg', 'Karen Page' ,'Advogado graduado na universidade de ??????? em advocacia, trabalha na área ha 4 anos. Especializado na área de imigração e passaporte.')" class="col advo">
                     <img src="img/karen page.jpg" alt="">
                     <p>Karen Page</p>
+                    <p class="profissao">Advogada</p>
                 </div>
             </div>
         </section>
