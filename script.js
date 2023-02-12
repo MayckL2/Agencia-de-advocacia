@@ -1,7 +1,7 @@
 let tela= window.innerWidth
 let mostra= document.querySelector("#mostra")
 
-let tamTela = document.title= window.innerHeight
+// let tamTela = document.title= window.innerHeight
 
 function abremodal(){
     modal= document.querySelector(".mod")
