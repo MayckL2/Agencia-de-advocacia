@@ -47,7 +47,7 @@ body{
     border-radius: 20px;
     position: fixed;
     top: 5vh;
-    left: 10vw;
+    left: 3vw;
     background-color: rgb(0, 26, 0);
     height: 500px;
     overflow-y: scroll;
@@ -292,7 +292,7 @@ main{
     }
 
     section:nth-of-type(3){
-        border-top: groove 5px;
+        height: 120vh;
         display: flex;
         
         h1{
